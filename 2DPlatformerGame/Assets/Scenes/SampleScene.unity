@@ -137,7 +137,8 @@ GameObject:
   - component: {fileID: 483481747}
   - component: {fileID: 483481746}
   - component: {fileID: 483481745}
-  m_Layer: 0
+  - component: {fileID: 483481748}
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -765,7 +766,7 @@ CompositeCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
@@ -827,6 +828,25 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!251 &483481748
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483481741}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,6 +858,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -853,6 +874,19 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a218fd02e17aa8b478d71b0c739be7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1494638516}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -4185,6 +4219,7 @@ GameObject:
   - component: {fileID: 1494638514}
   - component: {fileID: 1494638513}
   - component: {fileID: 1494638517}
+  - component: {fileID: 1494638518}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4238,7 +4273,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1494638515
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4316,6 +4351,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8850438385ea6ee4dac431dddb2e6592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpableGround:
+    serializedVersion: 2
+    m_Bits: 64
+  moveSpeed: 7
+  jumpForce: 14
+--- !u!95 &1494638518
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494638512}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5432a9b49e5bd094eb0f4ea8d19628bd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1783245500
 GameObject:
   m_ObjectHideFlags: 0
